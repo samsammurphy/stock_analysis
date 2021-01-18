@@ -36,10 +36,10 @@ def loadData(ticker, start, end):
      return df_stockdata
 
 
-@st.cache(suppress_st_warning=True)
-def summary_stats(ticker):
-    df_summary = fa.summary(ticker)
-    return df_summary
+# @st.cache(suppress_st_warning=True)
+# def summary_stats(ticker):
+#     df_summary = fa.summary(ticker)
+#     return df_summary
 
 @st.cache(suppress_st_warning=True)
 def ratio_indicators(ticker):
@@ -333,7 +333,7 @@ if check_dates() and pivot_date == True:
         if fundamental_checkbox:
             ''' ## Fundamental analysis '''
             st.title('Summary')
-            st.dataframe(summary_stats(ticker))
+            st.write('st.dataframe(summary_stats(ticker))')
         
             st.title('Ratios and indicators')
             st.dataframe(ratio_indicators(ticker))
